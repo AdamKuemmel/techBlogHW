@@ -1,0 +1,29 @@
+<div id="card" style="width: 18rem;">
+  {{! <img src="" class="card-img-top" alt=".IMG GOES HERE.." /> }}
+  <div class="card-body">
+
+    <p class="card-text">Make:{{title}}</p>
+    <p class="card-text">Model:{{content}}</p>
+    <p class="card-text">Year:{{car_year}}</p>
+    <a href="/api/cars/{{id}}" id="view_car" class="cloudinary-button">View post</a>
+    <button id="deletebutton" data-id={{id}} class="cloudinary-button">Delete
+      this Car</button>
+    <a
+      href="/api/posts/update/{{id}}"
+      id="updatebutton"
+      class="cloudinary-button"
+    >Update your Car</a>
+    <script>
+
+      const deleteCar{{id}}
+      = async () => { const response = await fetch("/api/cars/" +
+      {{id}}, { method: "DELETE" }) if (response.ok) {
+      document.location.replace("/dashboard/myCars") } }
+      document.querySelector(`#deletebutton{{id}}`).addEventListener("click",
+      deleteCar{{id}});
+    </script>
+
+  </div>
+</div>
+
+<script src="/js/delete.js"></script>
