@@ -1,5 +1,3 @@
-let Img;
-
 const newPost = async (event) => {
   event.preventDefault();
 

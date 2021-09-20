@@ -12,7 +12,7 @@ router.get("/myPosts", async (req, res) => {
   const postCards = postData.map((post) => post.get({ plain: true }));
 
   console.log(postCards);
-  res.render("newPost", { postCards, loggedIn: req.session.loggedIn });
+  res.render("postFeed", { postCards, loggedIn: req.session.loggedIn });
 });
 
 router.get("/makePost", async (req, res) => {

@@ -39,11 +39,11 @@ router.get("/:id", async (req, res) => {
 
 //Create a post
 router.post("/", async (req, res) => {
-  console.log("hi");
+  console.log(req.body);
   try {
     const createPost = await Post.create({
-      title: req.body.title,
-      content: req.body.content,
+      title: req.body.postTitle,
+      content: req.body.postContent,
       user_id: req.session.username.id,
     });
 
