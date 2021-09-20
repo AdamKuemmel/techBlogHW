@@ -2,17 +2,17 @@ const router = require("express").Router();
 const { Post } = require("../models/index");
 
 // Get all Posts
-router.get("/posts", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Gets all informatation from our post model/Database
     const postCardsData = await Post.findAll();
     // Maps the data collected in a prettier format
-    const postCards = postCardsData.map((cars) => post.get({ plain: true }));
+    const postCards = postCardsData.map((post) => post.get({ plain: true }));
 
     // Renders this information using handlebars and make sure we are logged in
     // switch to render homepage when frontend is done
     // res.json(carCards)
-    res.render("homepage", { postCards, loggedIn: req.session.loggedIn });
+    res.render("postFeed", { postCards, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

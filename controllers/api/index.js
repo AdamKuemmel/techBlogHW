@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const postRoute = require("../post-routes");
+const postRoute = require("./postInfo_route");
 
 router.use("/posts", postRoute);
 

@@ -1,0 +1,67 @@
+body {
+  justify-content: center;
+  background-color: lightcoral;
+  font-family: "Merriweather", serif;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  font-size: 100px;
+  background-color: palegreen;
+  color: #ffb473;
+}
+
+nav {
+  display: flex;
+  font-size: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: palegreen;
+  justify-content: space-around;
+  color: black;
+  font-family: "Merriweather", serif;
+}
+
+#card {
+  margin-left: 6%;
+  margin-top: 5px;
+  width: 88%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-color: #7a491f;
+  background-color: #c78346;
+}
+.card-body {
+  padding-left: 10px;
+  background-color: #46b0c7;
+  border-radius: 5%;
+  width: 88%;
+}
+
+.login-card {
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: #12687a;
+  color: #46b0c7;
+  height: 50vh;
+  border-radius: 5%;
+}
+.row-justify-space-between-md {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 75vh;
+  margin-top: 10px;
+}
+
+.section {
+  font-size: xx-large;
+}
+.content {
+  background-color: papayawhip;
+  width: 100%;
+}

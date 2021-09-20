@@ -13,9 +13,9 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,24 +26,48 @@
     <title>The Tech Blog</title>
   </head>
   <body>
-    <header>
-      </nav>
-      <h1>techBlog</h1>
-    </header>
-    <nav>
-      <a href="/"> Home</a>
-      <a href="/dashboard" id="dashboardButton">Dashboard</a>
-      {{#if loggedIn}}
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">The techBlog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+             {{#if loggedIn}}
         <button id="logout"> Logout</button>
-      {{else}}
-        <a href="/users/login">Login</a>
-      {{/if}}
-    </nav>
+          {{else}}
+          <a class="nav-link" href="users/login">login</a>
+           {{/if}}
+        </li>
+    
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+    
+    
+    
+    
+    
+    
     <main>
       <!-- link to postSeedData -->
-      <div class="note-display">
+     
         {{{body}}}
-      </div>
+   
     </main>
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>

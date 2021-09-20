@@ -1,7 +1,19 @@
 const router = require("express").Router();
 const { User } = require("../models/index");
 
-// Creates Our user
+//finds all user in db
+router.get("/", async (req, res) => {
+  try {
+    const dbUser = await User.findAll();
+    const userInfo = dbUser.map((user) => user.get({ plain: true }));
+
+    res.status(200).json(userInfo);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Creates  user
 router.post("/", async (req, res) => {
   try {
     // Creates User with all the require information
@@ -16,7 +28,7 @@ router.post("/", async (req, res) => {
     // Logs the user in
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      console.log(req.session.loggedIn);
       res.status(200).json(dbUserCreate);
     });
   } catch (err) {
@@ -30,16 +42,16 @@ router.post("/", async (req, res) => {
 });
 
 //Login get
-router.get("/", (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/posts");
+    res.redirect("/");
     return;
   }
   res.render("login");
 });
 
 // Login Post
-router.post("/", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     // finds user with email or username
     const dbUserData = await User.findOne({

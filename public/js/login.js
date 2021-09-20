@@ -2,18 +2,18 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const userName = document.querySelector("#username-login").value.trim();
+  const username = document.querySelector("#username-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
   // checks if exists
-  if (userName && password) {
-    const response = await fetch("/", {
+  if (username && password) {
+    const response = await fetch("/users/login", {
       method: "POST",
-      body: JSON.stringify({ userName, password }),
+      body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
     //if true "/post" in url home page post feed
     if (response.ok) {
-      document.location.replace("/posts");
+      document.location.replace("/");
     } else {
       alert("Failed to log in.");
     }
@@ -23,21 +23,29 @@ const loginFormHandler = async (event) => {
 //take user input data and search for post in database
 const signupFormHandler = async (event) => {
   event.preventDefault();
-
-  //collect user input data from browser
-  const username = document.querySelector("#username-signup").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
+  const username = document.querySelector("#username-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
-  //check if all are true
-  if (username && email && password) {
-    const response = await fetch("/api/users", {
+
+  const firstname = document.querySelector("#firstName-signup").value.trim();
+  const lastname = document.querySelector("#lastName-signup").value.trim();
+
+  if (email && username && password && firstname && lastname) {
+    const response = await fetch("/users/", {
       method: "POST",
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({
+        email,
+        username,
+        password,
+        firstname,
+        lastname,
+      }),
       headers: { "Content-Type": "application/json" },
     });
-    //if response true "/" in url home page post feed
+
     if (response.ok) {
       document.location.replace("/");
+      console.log("You sucessfully logged in!");
     } else {
       alert("Failed to sign up.");
     }
