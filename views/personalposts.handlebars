@@ -2,18 +2,20 @@
 
   <div class="card-body">
 
-    <p class="card-text">Title:{{singlepost.title}}</p>
-    <p class="card-text">Content:{{singlepost.content}}</p>
-    <p class="card-text">last updated:{{singlepost.updated_at}}</p>
-    <a href="/api/posts/{{id}}" id="view_car" class="cloudinary-button">View
-      post</a>
-    <button id="deletebutton" data-id={{id}} class="cloudinary-button">Delete
-      this Car</button>
+    <p class="card-text">Title:{{singlePost.title}}</p>
+    <p class="card-text">Content:{{singlePost.content}}</p>
+    <p class="card-text">last updated:{{singlePost.updated_at}}</p>
+
+    <button
+      id="deletebutton"
+      data-id={{singlePost.id}}
+      class="cloudinary-button"
+    >Delete this post</button>
     <a
-      href="/api/posts/update/{{id}}"
+      href="/api/posts/update/{{singlePost.id}} "
       id="updatebutton"
       class="cloudinary-button"
-    >Update your Car</a>
+    >Update this post</a>
     <script>
 
       const deleteCar{{id}}
