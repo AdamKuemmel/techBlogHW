@@ -2,10 +2,11 @@
 
   <div class="card-body">
 
-    <p class="card-text">Make:{{title}}</p>
-    <p class="card-text">Model:{{content}}</p>
-    <p class="card-text">Year:{{car_year}}</p>
-    <a href="/api/cars/{{id}}" id="view_car" class="cloudinary-button">View post</a>
+    <p class="card-text">Title:{{singlepost.title}}</p>
+    <p class="card-text">Content:{{singlepost.content}}</p>
+    <p class="card-text">last updated:{{singlepost.updated_at}}</p>
+    <a href="/api/posts/{{id}}" id="view_car" class="cloudinary-button">View
+      post</a>
     <button id="deletebutton" data-id={{id}} class="cloudinary-button">Delete
       this Car</button>
     <a
@@ -16,9 +17,9 @@
     <script>
 
       const deleteCar{{id}}
-      = async () => { const response = await fetch("/api/cars/" +
+      = async () => { const response = await fetch("/api/posts/" +
       {{id}}, { method: "DELETE" }) if (response.ok) {
-      document.location.replace("/dashboard/myCars") } }
+      document.location.replace("/dashboard/myPosts") } }
       document.querySelector(`#deletebutton{{id}}`).addEventListener("click",
       deleteCar{{id}});
     </script>

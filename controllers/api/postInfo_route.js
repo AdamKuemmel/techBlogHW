@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
       const singlePost = singlePostQuery.get({ plain: true });
       const user_id = user_idQuery.get({ plain: true });
 
-      res.render("single-post", {
+      res.render("personalposts", {
         singlePost,
         user_id,
         loggedIn: req.session.loggedIn,
