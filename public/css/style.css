@@ -29,14 +29,14 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-color: #7a491f;
-  background-color: #c78346;
+  border-color: white;
+  background-color: white;
 }
 .card-body {
   padding-left: 10px;
-  background-color: #46b0c7;
+  background-color: whitesmoke;
   border-radius: 5%;
-  width: 88%;
+  width: 100%;
 }
 
 .login-card {
@@ -44,8 +44,8 @@ nav {
   padding-right: 30px;
   justify-content: space-evenly;
   text-align: center;
-  background-color: #12687a;
-  color: #46b0c7;
+  background-color: lightgray;
+  color: black;
   height: 50vh;
   border-radius: 5%;
 }
